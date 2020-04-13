@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<!-- so executa uma vez -->
+	<p v-once>{{ titulo }}</p>
+	<hr />
+	<p>{{ saudacao() }}</p>
+	<hr />
+	<!-- Para acessar link usamos diretivas "v-bind"
+	cria uma propriedade dentro de um tag-->
+	<a v-bind:href="link">Google</a>
+</div>
+
+<script>
+	new Vue({
+		//elemento, seleciona a partir do id
+
+		el: "#app",
+		data: {
+			titulo: "Usando VueJS!",
+			link: "https://www.google.com",
+		},
+		// tudo retornado no methods é retrnado como string
+		// this retorna a instancia do VUE
+		methods: {
+			saudacao: function () {
+				this.titulo = "Bom dia!";
+				return this.titulo;
+			},
+		},
+	});
+</script>
