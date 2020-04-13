@@ -1,0 +1,22 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<p>{{ titulo }}</p>
+</div>
+
+<script>
+	new Vue({
+		//elemento, seleciona a partir do id
+		el: "#app",
+		data: {
+			titulo: "Usando VueJS!",
+		},
+		// tudo retornado no methods é retrnado como string
+		// this retorna a instancia do VUE
+		methods: {
+			saudacao: function () {
+				return this.titulo;
+			},
+		},
+	});
+</script>
