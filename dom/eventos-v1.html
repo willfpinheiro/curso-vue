@@ -1,0 +1,30 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<p>{{ contador }}</p>
+	<!-- v-on executa uma açao-->
+	<button v-on:click="somar">Somar 1</button>
+	<button v-on:click="subtrair">subtrair 1</button>
+	<button v-on:click="multiplicar">multiplicar</button>
+</div>
+
+<script>
+	new Vue({
+		//elemento, seleciona a partir do id
+		el: "#app",
+		data: {
+			contador: 0,
+		},
+		methods: {
+			somar() {
+				this.contador++;
+			},
+			subtrair() {
+				this.contador--;
+			},
+			multiplicar() {
+				this.contador = this.contador * this.contador;
+			},
+		},
+	});
+</script>
