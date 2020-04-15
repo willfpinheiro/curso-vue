@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+	<p>{{ contador }}</p>
+	<!-- v-on executa uma açao-->
+	<button v-on:click="somar(5, $event)">Somar 1</button>
+	<button v-on:click="subtrair">subtrair 1</button>
+	<button v-on:click="multiplicar">multiplicar</button>
+	<!-- por padrao o v-on passa o event para a funcao -->
+	<p v-on:mousemove="atualizarXY">Mouse: {{x}} e {{y}}</p>
+</div>
+
+<script>
+	new Vue({
+		//elemento, seleciona a partir do id
+		el: "#app",
+		data: {
+			contador: 0,
+			x: 0,
+			y: 0,
+		},
+		methods: {
+			somar(passo, event) {
+				console.log(passo, event);
+				this.contador += passo;
+			},
+			subtrair() {
+				this.contador--;
+			},
+			multiplicar() {
+				this.contador = this.contador * this.contador;
+			},
+			atualizarXY(e) {
+				this.x = event.clientX;
+				this.y = event.clientY;
+			},
+		},
+	});
+</script>
