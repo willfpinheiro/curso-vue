@@ -1,0 +1,50 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<style>
+	#app {
+		display: flex;
+		justify-content: space-around;
+	}
+	.demo {
+		width: 100px;
+		height: 100px;
+		background-color: gray;
+	}
+	.cor1 {
+		background-color: red;
+	}
+	.cor2 {
+		background-color: green;
+	}
+	.cor3 {
+		background-color: blue;
+	}
+</style>
+<div id="app">
+	<!-- aplicarC1 = !aplicarC1 - Como é boooleano, sempre que clicar ele ira alternar o valor -->
+	<div
+		class="demo"
+		:class="{cor1: aplicarCor1}"
+		@click="aplicarCor1 = !aplicarCor1"
+	></div>
+	<div
+		class="demo"
+		:class="{cor2: aplicarCor2}"
+		@click="aplicarCor2 = !aplicarCor2"
+	></div>
+	<div
+		class="demo"
+		:class="{cor3: aplicarCor3}"
+		@click="aplicarCor3 = !aplicarCor3"
+	></div>
+</div>
+
+<script>
+	new Vue({
+		el: "#app",
+		data: {
+			aplicarCor1: false,
+			aplicarCor2: false,
+			aplicarCor3: false,
+		},
+	});
+</script>
